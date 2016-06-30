@@ -483,7 +483,6 @@ public class SimulatorApp extends Application {
     }
 
     public static void main(String[] args) {
-	System.out.println(System.getProperty("user.dir"));
 	// Load the strategies for the first time
 	try {
 	    updateStrats();
