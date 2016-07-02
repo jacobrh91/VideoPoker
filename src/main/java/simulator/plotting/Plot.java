@@ -17,66 +17,66 @@ import simulator.SimulatorApp;
 
 public class Plot {
 
-    private static HBox root;
+	private static HBox root;
 
-    private static XYChart.Series<Number, Number> series1;
-    private static XYChart.Series<Number, Number> series2;
-    private static XYChart.Series<Number, Number> series3;
-    private static XYChart.Series<Number, Number> series4;
-    private static XYChart.Series<Number, Number> series5;
-    private static XYChart.Series<Number, Number> series6;
+	private static XYChart.Series<Number, Number> series1;
+	private static XYChart.Series<Number, Number> series2;
+	private static XYChart.Series<Number, Number> series3;
+	private static XYChart.Series<Number, Number> series4;
+	private static XYChart.Series<Number, Number> series5;
+	private static XYChart.Series<Number, Number> series6;
 
-    private static LineChart<Number, Number> chart;
+	private static LineChart<Number, Number> chart;
 
-    private static DropShadow small_shadow = new DropShadow(1, 3, 2, Color.BLACK);
+	private static DropShadow small_shadow = new DropShadow(1, 3, 2, Color.BLACK);
 
-    public static void clearPlot() {
+	public static void clearPlot() {
 
-	series1.getData().clear();
-	series2.getData().clear();
-	series3.getData().clear();
-	series4.getData().clear();
-	series5.getData().clear();
-	series6.getData().clear();
+		series1.getData().clear();
+		series2.getData().clear();
+		series3.getData().clear();
+		series4.getData().clear();
+		series5.getData().clear();
+		series6.getData().clear();
 
-    }
+	}
 
-    @SuppressWarnings("unchecked")
-    public static HBox linePlot(SimulatorApp sim_inst) {
-	root = new HBox();
-	root.setBackground(new Background(new BackgroundFill(Color.rgb(0, 50, 180), new CornerRadii(11), null)));
+	@SuppressWarnings("unchecked")
+	public static HBox linePlot(SimulatorApp sim_inst) {
+		root = new HBox();
+		root.setBackground(new Background(new BackgroundFill(Color.rgb(0, 50, 180), new CornerRadii(11), null)));
 
-	root.setBorder(new Border(
-	    new BorderStroke(Color.GRAY, BorderStrokeStyle.SOLID, new CornerRadii(10), new BorderWidths(2))));
+		root.setBorder(new Border(
+				new BorderStroke(Color.GRAY, BorderStrokeStyle.SOLID, new CornerRadii(10), new BorderWidths(2))));
 
-	//defining the axes
-	final NumberAxis x_axis = new NumberAxis();
-	final NumberAxis y_axis = new NumberAxis();
+		// defining the axes
+		final NumberAxis x_axis = new NumberAxis();
+		final NumberAxis y_axis = new NumberAxis();
 
-	x_axis.setLabel("Hand");
-	y_axis.setLabel("Credits");
+		x_axis.setLabel("Hand");
+		y_axis.setLabel("Credits");
 
-	//creating the chart
-	chart = new LineChart<Number, Number>(x_axis, y_axis);
-	chart.animatedProperty().set(false);
+		// creating the chart
+		chart = new LineChart<Number, Number>(x_axis, y_axis);
+		chart.animatedProperty().set(false);
 
-	chart.setCreateSymbols(false);
-	chart.legendVisibleProperty().set(false);
+		chart.setCreateSymbols(false);
+		chart.legendVisibleProperty().set(false);
 
-	//adding a series
-	series1 = sim_inst.getSt1().getSeries();
-	series2 = sim_inst.getSt2().getSeries();
-	series3 = sim_inst.getSt3().getSeries();
-	series4 = sim_inst.getSt4().getSeries();
-	series5 = sim_inst.getSt5().getSeries();
-	series6 = sim_inst.getSt6().getSeries();
+		// adding a series
+		series1 = sim_inst.getSt1().getSeries();
+		series2 = sim_inst.getSt2().getSeries();
+		series3 = sim_inst.getSt3().getSeries();
+		series4 = sim_inst.getSt4().getSeries();
+		series5 = sim_inst.getSt5().getSeries();
+		series6 = sim_inst.getSt6().getSeries();
 
-	chart.getData().addAll(series1, series2, series3, series4, series5, series6);
+		chart.getData().addAll(series1, series2, series3, series4, series5, series6);
 
-	chart.setPrefWidth(810);
-	chart.setEffect(small_shadow);
+		chart.setPrefWidth(810);
+		chart.setEffect(small_shadow);
 
-	root.getChildren().add(chart);
-	return root;
-    }
+		root.getChildren().add(chart);
+		return root;
+	}
 }

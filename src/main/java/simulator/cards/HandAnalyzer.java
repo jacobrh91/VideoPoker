@@ -1,8 +1,5 @@
 package simulator.cards;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 /**
  * Provides a method to analyze a 5 card poker hand and determine the outcome
  * 
@@ -29,6 +26,10 @@ public class HandAnalyzer {
 	/*
 	 * Suit KEY 'C' = 1 'D' = 2 'H' = 3 'S' = 4
 	 */
+
+	public static boolean getStraight() {
+		return straight;
+	}
 
 	// Converts card number to integer.
 	public static int valueConvert(String item) {
@@ -84,13 +85,11 @@ public class HandAnalyzer {
 
 	// Saves suit of each card.
 	public static int suitConvert(String item) {
-		Pattern myPattern = Pattern.compile("([^CDHS]+)([CDHS])");
-		Matcher myMatcher = myPattern.matcher(item);
-		myMatcher.find();
-		String cardSuit = myMatcher.group(2);
-		char suitCard = cardSuit.charAt(0);
+		char cardSuit = item.charAt(item.length() - 1);
+
 		int cSuit;
-		switch (suitCard) {
+
+		switch (cardSuit) {
 		case 'C':
 			cSuit = 1;
 			break;
@@ -112,7 +111,7 @@ public class HandAnalyzer {
 
 	// Combines Convert methods for each card in hand, and adds
 	// values to card_values and card_suits
-	public void processHand(String[] hand) {
+	private void processHand(String[] hand) {
 		for (int i = 0; i < 5; i++) {
 			int values = valueConvert(hand[i]);
 			int suit = suitConvert(hand[i]);

@@ -153,10 +153,10 @@ public class Strategy {
 	}
 	bReader.close();
 	//Update strategy values
-	nothing = new String[] { getFromMat(matrix, 0, 0), getFromMat(matrix, 1, 0), getFromMat(matrix, 2, 0),
-	    getFromMat(matrix, 3, 0), getFromMat(matrix, 4, 0), getFromMat(matrix, 5, 0), getFromMat(matrix, 6, 0), };
+	nothing = new String[] {getFromMat(matrix, 0, 0), getFromMat(matrix, 1, 0), getFromMat(matrix, 2, 0),
+	    getFromMat(matrix, 3, 0), getFromMat(matrix, 4, 0), getFromMat(matrix, 5, 0), getFromMat(matrix, 6, 0) };
 	onelow = new String[] { getFromMat(matrix, 0, 1), getFromMat(matrix, 1, 1), getFromMat(matrix, 2, 1),
-	    getFromMat(matrix, 3, 1), getFromMat(matrix, 4, 1), getFromMat(matrix, 5, 1), getFromMat(matrix, 6, 1), };
+	    getFromMat(matrix, 3, 1), getFromMat(matrix, 4, 1), getFromMat(matrix, 5, 1), getFromMat(matrix, 6, 1) };
 	oneroyal = new String[] { getFromMat(matrix, 0, 2), getFromMat(matrix, 1, 2), getFromMat(matrix, 2, 2),
 	    getFromMat(matrix, 3, 2), getFromMat(matrix, 4, 2), getFromMat(matrix, 5, 2) };
     }
