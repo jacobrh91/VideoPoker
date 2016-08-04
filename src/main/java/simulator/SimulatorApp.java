@@ -183,8 +183,6 @@ public class SimulatorApp extends Application {
 	// Updates the strategies available from the choice box
 	public static void updateStrats() throws URISyntaxException {
 
-		System.out.println(System.getProperty("user.dir"));
-
 		// Folder where strategy files are contained
 		File folder = new File(System.getProperty("user.dir") + "/src/main/resources/Saved_Strategies/");
 
@@ -210,7 +208,6 @@ public class SimulatorApp extends Application {
 				}
 			}
 		}
-		System.out.print("List refilled: ");
 	}
 
 	// Adds increase unit to all of the strategies
@@ -481,7 +478,6 @@ public class SimulatorApp extends Application {
 	}
 
 	public static void main(String[] args) {
-		System.out.println(System.getProperty("user.dir"));
 		// Load the strategies for the first time
 		try {
 			updateStrats();
